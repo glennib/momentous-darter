@@ -1,0 +1,47 @@
+# Node modules and dependency artifacts
+node_modules/
+.pnpm/
+.pnp.*
+
+# Build output
+dist/
+build/
+.cache/
+.next/
+.remix/
+.vite/
+*.tsbuildinfo
+
+# Environment variables and config
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+coverage/
+.vitest/
+
+# SQL migration output (optional)
+migrations/
+db.sqlite
+
+# Editor/IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS-generated
+.DS_Store
+Thumbs.db
+
+# Remix cloudflare/edge artifacts (if using)
+functions/
+
