@@ -25,14 +25,14 @@ export const loader: LoaderFunction = async () => {
 export default function Index() {
   const { articles } = useLoaderData<{ articles: Article[] }>();
   return (
-    <div className="space-y-4">
+    <div className="articles">
       {articles.map((article) => (
-        <div key={article.link} className="p-4 bg-white shadow rounded-lg">
-          <h2 className="text-xl font-bold">
+        <div key={article.link} className="article">
+          <h2 className="article-title">
             <a href={article.link}>{article.title}</a>
           </h2>
-          <p className="text-gray-500">{new Date(article.pubDate).toLocaleDateString()}</p>
-          <div className="prose mt-2" dangerouslySetInnerHTML={{ __html: article.content }} />
+          <p className="article-meta">{new Date(article.pubDate).toLocaleDateString()}</p>
+          <div className="article-content" dangerouslySetInnerHTML={{ __html: article.content }} />
         </div>
       ))}
     </div>
