@@ -3,7 +3,13 @@
 Read the project's README.md and DESIGN.md.
 Read packages.json to learn about scripts and dependencies.
 
+# Running commands
+
+Run commands with `nix-shell --run "<command>"`.
+
 # Lints
+
+Before considering a task complete, run lints, formatting and tests.
 
 Warnings and errors should be corrected.
 Not by ignoring them.
