@@ -1,21 +1,31 @@
 {
-  "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx"],
+  // This is the configuration file for TypeScript, a statically typed superset of JavaScript.
+  // It tells the TypeScript compiler (tsc) how to compile the project's .ts and .tsx files.
+  "include": [
+    // This array specifies which files TypeScript should include in the compilation.
+    "remix.env.d.ts", // A file that contains type declarations for the Remix environment.
+    "**/*.ts", // All TypeScript files.
+    "**/*.tsx" // All TypeScript files with JSX (React components).
+  ],
   "compilerOptions": {
-    "lib": ["DOM", "DOM.Iterable", "ES2022"],
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "jsx": "react-jsx",
-    "moduleResolution": "Bundler",
-    "resolveJsonModule": true,
-    "target": "ES2022",
-    "module": "esnext",
-    "strict": true,
-    "allowJs": true,
-    "forceConsistentCasingInFileNames": true,
-    "baseUrl": ".",
+    // This object contains the compiler options.
+    "lib": ["DOM", "DOM.Iterable", "ES2022"], // Specifies which built-in JavaScript libraries are available. 'DOM' and 'DOM.Iterable' are for browser environments. 'ES2022' is the version of JavaScript to target.
+    "isolatedModules": true, // Ensures that each file can be compiled as a separate module. This is required by some build tools like Vite.
+    "esModuleInterop": true, // Allows for better interoperability between CommonJS and ES modules.
+    "jsx": "react-jsx", // Specifies how to handle JSX. 'react-jsx' is the modern way to handle JSX with React.
+    "moduleResolution": "Bundler", // Tells TypeScript to use the same module resolution strategy as the bundler (Vite in this case).
+    "resolveJsonModule": true, // Allows importing JSON files as modules.
+    "target": "ES2022", // The version of JavaScript to compile to.
+    "module": "esnext", // The module system to use. 'esnext' means the latest version of ES modules.
+    "strict": true, // Enables all strict type-checking options. This is highly recommended for new projects.
+    "allowJs": true, // Allows JavaScript files to be compiled.
+    "forceConsistentCasingInFileNames": true, // Prevents issues with case-sensitive file systems.
+    "baseUrl": ".", // The base directory for resolving non-relative module imports.
     "paths": {
+      // This creates a path alias. Any import starting with '~/' will be resolved relative to the './app/' directory.
+      // This is a convenience for avoiding long relative paths like '../../components/...'
       "~/*": ["./app/*"]
     },
-    "noEmit": true
+    "noEmit": true // This tells the TypeScript compiler not to output any files. The build tool (Vite) is responsible for that. TypeScript is only used for type checking.
   }
 }

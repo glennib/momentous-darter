@@ -1,18 +1,28 @@
 {
   "name": "momentous-darter",
+  "description": "A personal RSS reader built with Remix, TypeScript, and CockroachDB. This file defines project metadata, scripts, and dependencies.",
   "version": "0.1.0",
   "type": "module",
   "scripts": {
     "build": "remix build",
+    "build:comment": "Compiles the application for production. Remix is a full-stack web framework, so this command builds both the frontend (React components) and the backend (server-side logic) into a production-ready output in the 'build/' directory.",
     "dev": "remix dev --manual",
+    "dev:comment": "Starts the development server. The '--manual' flag means you need to manually restart the server when you make changes to server-side code. The frontend will still hot-reload.",
     "start": "remix-serve ./build/index.js",
+    "start:comment": "Runs the production server using the output from the 'build' script. This is how you would run the application in a production environment.",
     "lint": "eslint . --ext .ts,.tsx",
+    "lint:comment": "Runs ESLint to statically analyze the code for potential errors and style issues. It checks all TypeScript (.ts) and TypeScript with JSX (.tsx) files.",
     "format": "prettier --write .",
+    "format:comment": "Formats the code using Prettier, an opinionated code formatter. The '--write' flag modifies files in place.",
     "format:check": "prettier --check .",
+    "format:check:comment": "Checks if the code is formatted correctly without modifying any files. This is useful for CI/CD pipelines.",
     "test": "vitest run",
-    "check": "pnpm lint && pnpm format:check && pnpm test"
+    "test:comment": "Runs the test suite using Vitest, a fast test runner for Vite-based projects. Remix uses Vite under the hood.",
+    "check": "pnpm lint && pnpm format:check && pnpm test",
+    "check:comment": "A convenience script that runs the linter, format checker, and tests in sequence. This is often used as a pre-commit hook or in CI/CD."
   },
   "devDependencies": {
+    "__comment__": "Dependencies used only for development, like linters, test runners, and build tools. They are not included in the production build.",
     "@eslint/js": "^9.30.1",
     "@remix-run/dev": "2.9.2",
     "@types/node": "^24.0.10",
@@ -31,6 +41,7 @@
     "vitest": "^3.2.4"
   },
   "dependencies": {
+    "__comment__": "Dependencies that are required for the application to run in production.",
     "@remix-run/node": "2.9.2",
     "@remix-run/react": "2.9.2",
     "@remix-run/serve": "2.9.2",
